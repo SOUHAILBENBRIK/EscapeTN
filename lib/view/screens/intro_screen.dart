@@ -1,6 +1,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kid_ask/controller/global_controller.dart';
+import 'package:kid_ask/utils/app_routes.dart';
 import 'package:kid_ask/utils/constants.dart';
+import 'package:kid_ask/view/widgets/intro_button.dart';
 import 'package:kid_ask/view/widgets/on_boarding_page.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -8,30 +12,43 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> onBoardingPages = [
-      OnBoardingPage(),
-      OnBoardingPage(),
-      OnBoardingPage()
-    ];
-    int index = 0;
+    final GlobalController globalController = Get.put(GlobalController());
     return Scaffold(
-      body: Container(
-        height: Constants.getWidth(context),
+      body: SizedBox(
+        height: Constants.getHeight(context),
         width: Constants.getWidth(context),
-        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-        child: Column(
-          children: [onBoardingPages[index],
-          DotsIndicator(
-  dotsCount: 3,
-  position: index,
-  decorator: DotsDecorator(
-    size: const Size.square(9.0),
-    activeSize: const Size(18.0, 9.0),
-    activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-  ))
-
-          ],
-        ),
+        child: GetBuilder<GlobalController>(builder: (_) {
+          return Column(
+            children: [
+              Constants.onBoardingPages[globalController.introIndex],
+              Spacer(),
+              DotsIndicator(
+                  dotsCount: 3,
+                  position: globalController.introIndex,
+                  decorator: DotsDecorator(
+                    size: const Size.square(9.0),
+                    activeSize: const Size(18.0, 9.0),
+                    activeShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0)),
+                  )),
+              Spacer(),
+              OnBoardingButton(
+                onPress: () {
+                  if (globalController.introIndex == 2) {
+                    Navigator.pushReplacementNamed(
+                        context, AppRoutes.spalshScreen);
+                  } else {
+                    globalController.increment();
+                  }
+                },
+                text: globalController.introIndex == 0 ? "Get Started" : "Next",
+              ),
+              SizedBox(
+                height: Constants.getHeight(context) * 0.015,
+              )
+            ],
+          );
+        }),
       ),
     );
   }

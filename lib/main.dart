@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kid_ask/controller/app_binding.dart';
 import 'package:kid_ask/firebase_options.dart';
 import 'package:kid_ask/utils/app_routes.dart';
 import 'package:kid_ask/utils/app_theme.dart';
@@ -18,11 +20,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.getLightTheme(),
       initialRoute: AppRoutes.spalshScreen,
       routes: AppRoutes.routes,
+      initialBinding: AppBinding(),
     );
   }
 }
