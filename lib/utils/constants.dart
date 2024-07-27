@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kid_ask/model/destination_model.dart';
 import 'package:kid_ask/view/widgets/on_boarding_page.dart';
 
 class Constants {
@@ -6,7 +7,30 @@ class Constants {
   static const Color orangeColor = Color.fromRGBO(255, 112, 41, 1);
 
 
-
+  static List<DestinationModel> destinations = [
+    DestinationModel(
+      name: 'Eiffel Tower',
+      description: 'Iconic tower in Paris, France.',
+      imagePath: 'https://assets.editorial.aetnd.com/uploads/2011/06/gettyimages-142198198.jpg?width=1920&height=960&crop=1920%3A960%2Csmart&quality=75&auto=webp',
+      isFavorite: true,
+      location: 'Paris, France', rating: 3.5,
+    ),
+    DestinationModel(
+      name: 'Great Wall of China',
+      description: 'Historic wall in China.',
+      imagePath: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/375px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg',
+      isFavorite: false,
+      location: 'China', rating: 4.2,
+    ),
+    DestinationModel(
+      name: 'Grand Canyon',
+      description: 'Famous canyon in Arizona, USA.',
+      imagePath: 'https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg?maxwidth=1300&maxheight=1300&autorotate=false',
+      isFavorite: true,
+      location: 'Arizona, USA', rating: 3.2,
+    ),
+   
+  ];
 
   static const String geminiApiKey = "AIzaSyDJ1zQQ1qDWHR-d7JFcco4vb1IAlDxJX9U";
   static const String appName = "EscapeTN";

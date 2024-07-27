@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:kid_ask/controller/global_controller.dart';
 import 'package:kid_ask/utils/app_routes.dart';
 import 'package:kid_ask/utils/constants.dart';
-import 'package:kid_ask/view/widgets/intro_button.dart';
+import 'package:kid_ask/view/widgets/main_button.dart';
 import 'package:kid_ask/view/widgets/on_boarding_page.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -32,11 +32,11 @@ class IntroScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5.0)),
                   )),
               Spacer(),
-              OnBoardingButton(
+              MainButton(
                 onPress: () {
                   if (globalController.introIndex == 2) {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.spalshScreen);
+                        context, AppRoutes.loginScreen);
                   } else {
                     globalController.increment();
                   }

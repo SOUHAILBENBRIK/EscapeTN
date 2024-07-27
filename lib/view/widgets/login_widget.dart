@@ -2,22 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:kid_ask/utils/constants.dart';
 import 'package:kid_ask/view/widgets/input_form_widget.dart';
 
-class SignUpWidget extends StatefulWidget {
-  const SignUpWidget({super.key});
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({super.key});
 
   @override
-  State<SignUpWidget> createState() => _SignUpWidgetState();
+  State<LoginWidget> createState() => _LoginWidgetState();
 }
 
-class _SignUpWidgetState extends State<SignUpWidget> {
+class _LoginWidgetState extends State<LoginWidget> {
   final _formKey = GlobalKey<FormState>();
-  late TextEditingController _nameController;
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
 
   @override
   void initState() {
-    _nameController = TextEditingController();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
     super.initState();
@@ -25,7 +23,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
 
   @override
   void dispose() {
-    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -40,12 +37,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            InputFormWidget(
-                controller: _nameController,
-                inputType: TextInputType.name,
-                isPassword: false,
-                textInputAction: TextInputAction.next,
-                hintText: "Username"),
             InputFormWidget(
                 controller: _emailController,
                 inputType: TextInputType.emailAddress,
