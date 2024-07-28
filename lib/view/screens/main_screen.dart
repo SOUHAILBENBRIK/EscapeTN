@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:kid_ask/controller/global_controller.dart';
+import 'package:kid_ask/utils/app_routes.dart';
 import 'package:kid_ask/utils/constants.dart';
 import 'package:kid_ask/view/screens/calandar_screen.dart';
 import 'package:kid_ask/view/screens/chat_boot_screen.dart';
@@ -29,33 +30,57 @@ class MainScreen extends StatelessWidget {
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: globalController.mainIndex,
               selectedItemColor: Constants.mainColor,
-              selectedIconTheme: const IconThemeData(color: Constants.mainColor),
+              selectedIconTheme:
+                  const IconThemeData(color: Constants.mainColor),
               selectedLabelStyle: const TextStyle(color: Constants.mainColor),
               unselectedLabelStyle:
                   TextStyle(color: Colors.grey.withOpacity(0.5)),
-              onTap: globalController.changeIndex,
+              onTap: (index) {
+                if (index == 2) {
+                  Navigator.pushReplacementNamed(
+                      context, AppRoutes.chatBootScreen);
+                } else {
+                  globalController.changeIndex(index);
+                }
+              },
               items: [
                 BottomNavigationBarItem(
-                    activeIcon: SvgPicture.asset("assets/icons/home.svg",color: Constants.mainColor,),
+                    activeIcon: SvgPicture.asset(
+                      "assets/icons/home.svg",
+                      color: Constants.mainColor,
+                    ),
                     icon: SvgPicture.asset("assets/icons/home.svg"),
                     label: 'Home'),
                 BottomNavigationBarItem(
-                    activeIcon: SvgPicture.asset("assets/icons/Calendar.svg",color: Constants.mainColor,),
+                    activeIcon: SvgPicture.asset(
+                      "assets/icons/Calendar.svg",
+                      color: Constants.mainColor,
+                    ),
                     icon: SvgPicture.asset("assets/icons/Calendar.svg"),
                     label: 'calendar'),
+                const BottomNavigationBarItem(
+                    label: '',
+                    icon: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Constants.mainColor,
+                      child: Icon(
+                        Icons.assistant,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                    )),
                 BottomNavigationBarItem(
-                  label: '',
-                  icon: CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Constants.mainColor,
-                  child: Icon(Icons.search,color: Colors.white,size: 35,),
-                )),
-                BottomNavigationBarItem(
-                    activeIcon: SvgPicture.asset("assets/icons/Caht.svg",color: Constants.mainColor,),
+                    activeIcon: SvgPicture.asset(
+                      "assets/icons/Caht.svg",
+                      color: Constants.mainColor,
+                    ),
                     icon: SvgPicture.asset("assets/icons/Caht.svg"),
                     label: 'Messages'),
                 BottomNavigationBarItem(
-                    activeIcon: SvgPicture.asset("assets/icons/Icon.svg",color: Constants.mainColor,),
+                    activeIcon: SvgPicture.asset(
+                      "assets/icons/Icon.svg",
+                      color: Constants.mainColor,
+                    ),
                     icon: SvgPicture.asset("assets/icons/Icon.svg"),
                     label: 'Profile'),
               ],

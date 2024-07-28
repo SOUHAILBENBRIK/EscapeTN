@@ -1,3 +1,4 @@
+import 'package:kid_ask/view/screens/chat_boot_screen.dart';
 import 'package:kid_ask/view/screens/forget_password.dart';
 import 'package:kid_ask/view/screens/intro_screen.dart';
 import 'package:kid_ask/view/screens/login_screen.dart';
@@ -12,12 +13,14 @@ class AppRoutes {
   static const String loginScreen = "/login";
   static const String forgetPasswordScreen = "/forgetpassword";
   static const String mainScreen = "/main";
+  static const String chatBootScreen = "/chat";
   static var routes = {
     spalshScreen: (context) => const SplashScreen(),
     introScreen: (context) => const IntroScreen(),
     loginScreen: (context) => const LoginScreen(),
     signUpScreen: (context) => const SignUpScreen(),
     forgetPasswordScreen: (context) => const ForgetPasswordScreen(),
-    mainScreen: (context) => const MainScreen()
+    mainScreen: (context) => const MainScreen(),
+    chatBootScreen : (context)=> const ChatBootScreen()
   };
 }

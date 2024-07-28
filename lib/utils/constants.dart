@@ -3,6 +3,8 @@ import 'package:kid_ask/model/destination_model.dart';
 import 'package:kid_ask/view/widgets/on_boarding_page.dart';
 
 class Constants {
+
+  
   static const Color mainColor = Color.fromRGBO(13, 110, 253, 1);
   static const Color orangeColor = Color.fromRGBO(255, 112, 41, 1);
 
