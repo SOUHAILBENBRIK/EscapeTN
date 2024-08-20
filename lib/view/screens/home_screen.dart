@@ -145,7 +145,7 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: Constants.getHeight(context) * 0.03,
+            height: Constants.getHeight(context) * 0.02,
           ),
           Row(
             children: [

@@ -3,40 +3,60 @@ import 'package:kid_ask/model/destination_model.dart';
 import 'package:kid_ask/view/widgets/on_boarding_page.dart';
 
 class Constants {
-
-  
   static const Color mainColor = Color.fromRGBO(13, 110, 253, 1);
   static const Color orangeColor = Color.fromRGBO(255, 112, 41, 1);
 
-
   static List<DestinationModel> destinations = [
     DestinationModel(
-      name: 'Eiffel Tower',
-      description: 'Iconic tower in Paris, France.',
-      imagePath: 'https://assets.editorial.aetnd.com/uploads/2011/06/gettyimages-142198198.jpg?width=1920&height=960&crop=1920%3A960%2Csmart&quality=75&auto=webp',
+      name: 'Al-Aqsa Mosque',
+      description: 'أحد أقدس المساجد في الإسلام، يقع في القدس.',
+      imagePath:
+          'https://i0.wp.com/www.touristisrael.com/wp-content/uploads/2020/02/Temple-Mount-Copy-1-scaled-1.jpg?resize=1400%2C788&ssl=1',
       isFavorite: true,
-      location: 'Paris, France', rating: 3.5,
+      location: 'القدس، فلسطين',
+      rating: 4.9,
     ),
     DestinationModel(
-      name: 'Great Wall of China',
-      description: 'Historic wall in China.',
-      imagePath: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/375px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg',
-      isFavorite: false,
-      location: 'China', rating: 4.2,
+      name: 'El Jem Amphitheatre',
+      description: 'مسرح روماني قديم في تونس.',
+      imagePath:
+          'https://upload.wikimedia.org/wikipedia/commons/3/38/El_Djem_Amphitheater_aerial_view.jpg',
+      isFavorite: true,
+      location: 'تونس',
+      rating: 4.5,
     ),
     DestinationModel(
-      name: 'Grand Canyon',
-      description: 'Famous canyon in Arizona, USA.',
-      imagePath: 'https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg?maxwidth=1300&maxheight=1300&autorotate=false',
+      name: 'Pyramids of Giza',
+      description: 'أهرامات الجيزة الشهيرة في مصر.',
+      imagePath:
+          'https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg',
       isFavorite: true,
-      location: 'Arizona, USA', rating: 3.2,
+      location: 'الجيزة، مصر',
+      rating: 4.8,
     ),
-   
+    DestinationModel(
+      name: 'Burj Khalifa',
+      description: 'أطول برج في العالم، يقع في دبي.',
+      imagePath:
+          'https://alfaris-uae.com/wp-content/uploads/2023/02/DSC_7356.jpg',
+      isFavorite: true,
+      location: 'دبي، الإمارات العربية المتحدة',
+      rating: 4.7,
+    ),
+    DestinationModel(
+      name: 'Library of Alexandria',
+      description: 'مكتبة حديثة تحاكي مكتبة الإسكندرية القديمة.',
+      imagePath:
+          'https://miro.medium.com/v2/resize:fit:828/format:webp/1*BZpqhOFXaShpAMdYX6l55A.jpeg',
+      isFavorite: true,
+      location: 'الإسكندرية، مصر',
+      rating: 4.6,
+    ),
   ];
 
   static const String geminiApiKey = "AIzaSyDJ1zQQ1qDWHR-d7JFcco4vb1IAlDxJX9U";
   static const String appName = "EscapeTN";
-  
+
   static double getWidth(BuildContext context) {
     return MediaQuery.sizeOf(context).width;
   }

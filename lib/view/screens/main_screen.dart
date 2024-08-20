@@ -18,8 +18,8 @@ class MainScreen extends StatelessWidget {
     const List widgets = [
       HomeScreen(),
       CalandarScreen(),
-      ChatBootScreen(),
-      ChatBootScreen(),
+      CalandarScreen(),
+      CalandarScreen(),
       ProfileScreen()
     ];
     return Scaffold(
